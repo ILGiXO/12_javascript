@@ -6,9 +6,15 @@ console.log(findWord(str));
 
 function findWord(str, word) {
     // 코드 작성
-    var index1 = str.split(",").indexOf("고양이");
-    var index2 = str.split(",").indexOf("샌드위치");
-    console.log(`고양이는 배열 index ${index1}번째에 있습니다.`);
-    console.log(`샌드위치 배열 index ${index2}번째에 있습니다.`);
+    if (!word) return "결과를 확인할수 없습니다.";
+
+    const split = str.split(',');
+    const num = split.indexOf(word);
+
+    if (num !== -1) {
+        return `${word}는 배열 index${num}번째에 있습니다.`;
+    }else{
+        return `${word}는 배열에 존재하지 않습니다.`;
+    }
 
 }
